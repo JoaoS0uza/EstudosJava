@@ -1,12 +1,12 @@
 package Ex05;
 
-public class Trem implements Transportes{
+public class Bicicleta implements Transportes{
     private final double tarifa;
     private boolean emViagem;
     public double valorViagem;
 
-    public Trem() {
-        this.tarifa = 0.8f;
+    public Bicicleta() {
+        this.tarifa = 0.2f;
         this.emViagem = false;
     }
 
@@ -15,7 +15,7 @@ public class Trem implements Transportes{
         if (!emViagem){
             if (this.calcularTarifa(distancia)>0){
                 this.emViagem = true;
-                System.out.println("Voce iniciou uma viagem de trem");
+                System.out.println("Voce iniciou uma viagem de bicicleta");
                 System.out.println("Ficou no valor de: R$ "+this.valorViagem);
             }
         }else{

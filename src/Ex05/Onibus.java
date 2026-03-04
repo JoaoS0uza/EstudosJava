@@ -8,6 +8,7 @@ public class Onibus implements Transportes {
 
     public Onibus() {
         this.tarifa = 0.5f;
+        this.emViagem = false;
     }
 
     @Override
