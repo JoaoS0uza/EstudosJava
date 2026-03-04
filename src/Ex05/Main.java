@@ -9,8 +9,8 @@ public class Main {
 
         ArrayList<Transportes> meiosTransportes = new ArrayList<Transportes>();
         meiosTransportes.add(new Onibus());
-       /* meiosTransportes.add(new Trem());
-        meiosTransportes.add( new Bicicleta()); */
+        meiosTransportes.add(new Trem());
+        meiosTransportes.add( new Bicicleta());
 
         Scanner scan = new Scanner(System.in);
 
@@ -46,6 +46,15 @@ public class Main {
                     break;
                 case 2:
 
+                    System.out.println("Voce esta finalizando uma viagem.");
+                    System.out.println("Utilizou qual meio de transporte: ");
+                    System.out.println("1.Onibus");
+                    System.out.println("2.Trem");
+                    System.out.println("3.Bicicleta");
+                    meio = scan.nextInt();
+                    meiosTransportes.get(meio - 1).finalizarViagem();
+                    operacao = 0;
+                    break;
             }
         }
     }

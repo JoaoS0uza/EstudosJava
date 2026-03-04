@@ -11,12 +11,12 @@ public class Bicicleta implements Transportes{
     }
 
     @Override
-    public void iniciarViagem(Double distancia) {
+    public void iniciarViagem(double distancia) {
         if (!emViagem){
             if (this.calcularTarifa(distancia)>0){
                 this.emViagem = true;
                 System.out.println("Voce iniciou uma viagem de bicicleta");
-                System.out.println("Ficou no valor de: R$ "+this.valorViagem);
+                System.out.printf("Ficou no valor de: R$ %.2f%n", this.valorViagem);
             }
         }else{
             System.out.println("Voce ja esta em viagem.");
