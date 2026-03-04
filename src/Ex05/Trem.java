@@ -1,13 +1,13 @@
 package Ex05;
 
-public class Onibus implements Transportes {
-
+public class Trem implements Transportes{
     private final double tarifa;
     private boolean emViagem;
     public double valorViagem;
 
-    public Onibus() {
-        this.tarifa = 0.5f;
+    public Trem() {
+        this.tarifa = 0.8f;
+        this.emViagem = false;
     }
 
     @Override
@@ -15,7 +15,7 @@ public class Onibus implements Transportes {
         if (!emViagem){
             if (this.calcularTarifa(distancia)>0){
                 this.emViagem = true;
-                System.out.println("Voce iniciou a viagem uma onibus");
+                System.out.println("Voce iniciou uma viagem de Trem");
                 System.out.println("Ficou no valor de: R$ "+this.valorViagem);
             }
         }else{
