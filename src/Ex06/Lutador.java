@@ -17,18 +17,23 @@ public class Lutador {
         this.nacionalidade = nacionalidade;
         this.idade = idade;
         this.altura = altura;
-        this.peso = peso;
+        setPeso(peso);
         this.vitorias = vitorias;
         this.derrotas = derrotas;
         this.empates = empates;
     }
 
     public void apresentar(){
-        setvi
+        System.out.println("_____________________________________");
+        System.out.println("O lutador " +this.nome + " do "+this.nacionalidade);
+        System.out.println("Com "+this.idade+" ans e "+this.altura + " m, Pesando seus " +this.peso + " Kg.");
+        System.out.println("Tem o cartel de " +this.vitorias +" Vitorias, " +this.empates + " e "+this.derrotas+" Derrotas!");
+        System.out.println("_____________________________________");
     }
 
-    public void Status(){
-
+    public void status(){
+        System.out.println("Categoria: Peso "+this.categoria);
+        System.out.println("V:"+this.vitorias+" D:"+this.derrotas+" E:"+this.empates);
     }
 
     public void ganharLuta(){
@@ -73,7 +78,7 @@ public class Lutador {
 
     public void setPeso(double peso) {
         this.peso = peso;
-        setCategoria(peso);
+        setCategoria();
     }
 
     public double getAltura() {
@@ -88,14 +93,14 @@ public class Lutador {
         return categoria;
     }
 
-    private void setCategoria(double peso) {
-        if (peso<52.2){
+    private void setCategoria() {
+        if (this.peso<52.2){
             this.categoria = "Invalido";
-        }else if(peso<=70.3){
+        }else if(this.peso<=70.3){
             this.categoria = "Leve";
-        }else if(peso<=83.9){
+        }else if(this.peso<=83.9){
             this.categoria = "Medio";
-        }else if(peso<=120.2){
+        }else if(this.peso<=120.2){
             this.categoria = "Pesado";
         }else{
             this.categoria = "Invalido";
