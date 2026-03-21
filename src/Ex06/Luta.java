@@ -12,17 +12,17 @@ public class Luta {
 
 
 
-            public void marcarLuta(Lutador desafiado, Lutador desafiante){
-                if ((desafiado.getCategoria() == desafiante.getCategoria()) && (!desafiado.equals(desafiante))){
+            public void marcarLuta(Lutador l1, Lutador l2){
+                if ((l1.getCategoria().equals(l2.getCategoria())) && (!l1.equals(l2))){
                     this.aprovada = true;
-                    Lutador l1 = desafiado;
-                    Lutador l2 = desafiante;
+                    this.desafiado = l1;
+                    this.desafiante = l2;
                 }else{
                     this.aprovada = false;
                 }
             }
 
-            public void lutar(Lutador l1, Lutador l2) {
+            public void lutar() {
                 if (aprovada) {
                     desafiado.apresentar();
                     desafiante.apresentar();
@@ -30,17 +30,26 @@ public class Luta {
                     switch (vencedor) {
 
                         case 0:
+                            System.out.println("__________________________");
                             System.out.println("Empatou");
+                            System.out.println("__________________________");
                             desafiante.empatarLuta();
                             desafiado.empatarLuta();
+                            break;
                         case 1:
+                            System.out.println("__________________________");
                             System.out.println("Lutador " + desafiado.getNome() + " Ganhou");
+                            System.out.println("__________________________");
                             desafiado.ganharLuta();
                             desafiante.perderLuta();
+                            break;
                         case 2:
+                            System.out.println("__________________________");
                             System.out.println("Lutador " + desafiante.getNome() + " Ganhou");
+                            System.out.println("__________________________");
                             desafiante.ganharLuta();
                             desafiado.perderLuta();
+                            break;
                     }
                 } else {
                     System.out.println("A luta nao pode acontecer");

@@ -26,14 +26,16 @@ public class Lutador {
     public void apresentar(){
         System.out.println("_____________________________________");
         System.out.println("O lutador " +this.nome + " do "+this.nacionalidade);
-        System.out.println("Com "+this.idade+" ans e "+this.altura + " m, Pesando seus " +this.peso + " Kg.");
-        System.out.println("Tem o cartel de " +this.vitorias +" Vitorias, " +this.empates + " e "+this.derrotas+" Derrotas!");
-        System.out.println("_____________________________________");
+        System.out.printf("Com %d anos, %.2f m e pesando seus %.2f Kg.", this.idade, this.altura,this.peso);
+        System.out.println(" Tem o cartel de " +this.vitorias +" Vitorias, " +this.empates + " empates e "+this.derrotas+" Derrotas!");
+
     }
 
     public void status(){
+        System.out.printf("_______ O status do lutador %s _______", this.nome);
+        System.out.println();
         System.out.println("Categoria: Peso "+this.categoria);
-        System.out.println("V:"+this.vitorias+" D:"+this.derrotas+" E:"+this.empates);
+        System.out.println("Cartel: V:"+this.vitorias+" D:"+this.derrotas+" E:"+this.empates);
     }
 
     public void ganharLuta(){
@@ -48,7 +50,7 @@ public class Lutador {
         setEmpates(getEmpates() + 1);
     }
 
-    private void setCategoria() {
+    private void setCategoria(double peso) {
         if (this.peso<52.2){
             this.categoria = "Invalido";
         }else if(this.peso<=70.3){
@@ -100,14 +102,11 @@ public class Lutador {
 
     public void setPeso(double peso) {
         this.peso = peso;
+        setCategoria(peso);
     }
 
     public String getCategoria() {
         return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 
     public int getDerrotas() {
